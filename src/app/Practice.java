@@ -1,8 +1,7 @@
 package app;
-
 import javax.swing.*;
-
-public class practice {
+/*this class is for the practice GUI form */
+public class Practice {
     private JTextArea OriginalCodeField;
     private JButton EndButton;
     private JTextField InputCodeField;
@@ -14,13 +13,13 @@ public class practice {
     private JPanel OriginalCodePanel;
 
 
-
+/*this method  shows the pracice form*/
     public void showPracticeFrame()
     {
-        JFrame peactice= new JFrame("practice");
-        peactice.setContentPane(new practice().mainPanel);
-        peactice.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        peactice.pack();
-        peactice.setVisible(true);
+        JFrame Frame= new JFrame("practice");
+        Frame.setContentPane(new Practice().mainPanel);
+        Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Frame.pack();
+        Frame.setVisible(true);
     }
 }
