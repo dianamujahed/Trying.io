@@ -68,8 +68,12 @@ public class Upload {
 
 
 
-
         }
+
+       public  String languageName()
+       {
+           return  Language;
+       }
 
    });
 

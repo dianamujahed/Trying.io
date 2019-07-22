@@ -22,4 +22,6 @@ public class Practice {
         Frame.pack();
         Frame.setVisible(true);
     }
+
+
 }
