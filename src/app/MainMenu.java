@@ -30,6 +30,14 @@ public MainMenu(){
            frame.showPracticeFrame();
         }
     });
+    UploadButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Upload frame =new Upload();
+            frame.showUploadFrame();
+        }
+    });
+
     /* this action listener will exit the application when the button is clicked*/
     ExitButton.addActionListener(new ActionListener() {
         @Override

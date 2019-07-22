@@ -1,9 +1,7 @@
-import javax.security.auth.callback.LanguageCallback;
+package app;
+
 import javax.swing.*;
-import java.awt.*;
 import java.io.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -17,10 +15,11 @@ public class Upload {
     private JPanel  LanguagePanel;
     private JPanel  SavePanel;
     private JLabel  CodeLabel;
-    private JLabel  LanguageLabel;
     private JLabel  UploadLabel;
     private JPanel  CodeFieldPanel;
     private JTextArea CodeArea;
+    private JLabel LanguageLabel;
+
     public String Language;
 
 
@@ -77,20 +76,14 @@ public class Upload {
 }
 
 
-    public static void main(String [] args)
+    public void showUploadFrame()
     {
-        //the main class used to show Upload form.
-        JFrame upload = new JFrame("Update");
-        upload.setContentPane(new Upload().MainPanel);
-        upload.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        upload.pack();
-        upload.setVisible(true);
-
-
-
-
+        JFrame Frame= new JFrame("Upload");
+        Frame.setContentPane(new Upload().MainPanel);
+        Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Frame.pack();
+        Frame.setVisible(true);
     }
-
 
 
 
