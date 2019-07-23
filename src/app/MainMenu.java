@@ -27,6 +27,7 @@ public MainMenu(){
         @Override
         public void actionPerformed(ActionEvent e) {
            Practice frame =new Practice();
+            frame. setOriginalCode();
            frame.showPracticeFrame();
         }
     });
