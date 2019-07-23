@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 //this class for Upload form
-public class Upload {
+public class Upload  {
     private JPanel   MainPanel;
     private JTextField LanguageField;
     private JButton SaveButton;
@@ -22,9 +22,11 @@ public class Upload {
 
     public String Language;
 
-
+    public static String l;
     public Upload()
 {
+
+
     // when save button is clicked, new file will be created and named same name as the LanguageField variable
 
    SaveButton.addActionListener(new ActionListener()
@@ -33,7 +35,7 @@ public class Upload {
         public void actionPerformed(ActionEvent e) {
             Language = LanguageField.getText().toString();
 
-
+            l=Language;
              Language = Language+".txt";
              try {
                       //create new file  named(Language name)
@@ -70,16 +72,13 @@ public class Upload {
 
         }
 
-       public  String languageName()
-       {
-           return  Language;
-       }
 
    });
 
+
+
 }
-
-
+//This method used to show t  the upload frame.
     public void showUploadFrame()
     {
         JFrame Frame= new JFrame("Upload");
@@ -89,8 +88,13 @@ public class Upload {
         Frame.setVisible(true);
     }
 
+    //this method will return the name of language that we uploded  in the file.
+    public  String languageName()
+    {
 
+        return  l;
 
+    }
 
 
 }

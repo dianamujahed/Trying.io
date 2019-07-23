@@ -1,7 +1,8 @@
 package app;
 import javax.swing.*;
+
 /*this class is for the practice GUI form */
-public class Practice {
+public class Practice   {
     private JTextArea OriginalCodeField;
     private JButton EndButton;
     private JTextField InputCodeField;
@@ -11,9 +12,14 @@ public class Practice {
     private JPanel InputCodePanel;
     private JPanel EndPanel;
     private JPanel OriginalCodePanel;
+    private JLabel LanguageField;
+    private JLabel TimeField;
+    private JLabel LanguageLabel;
+    private JLabel TimeLabel;
+    private JLabel practiceLabel;
+    private   String Language;
 
-
-/*this method  shows the pracice form*/
+    /*this method  shows the pracice form*/
     public void showPracticeFrame()
     {
         JFrame Frame= new JFrame("practice");
@@ -22,6 +28,18 @@ public class Practice {
         Frame.pack();
         Frame.setVisible(true);
     }
+
+
+//this method used to show the Language name in the practice form.
+public Practice()
+{
+    Upload UploadObject=new Upload();
+  Language=UploadObject.languageName();
+    LanguageField.setText(Language);
+
+
+}
+
 
 
 }
