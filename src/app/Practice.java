@@ -1,6 +1,7 @@
 package app;
 import javax.swing.*;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 /*this class is for the practice GUI form */
 public class Practice   {
     private JTextArea OriginalCodeField;
@@ -30,16 +31,25 @@ public class Practice   {
     }
 
 
-//this method used to show the Language name in the practice form.
+
 public Practice()
 {
+    //the codde used to show the Language name in the practice form
     Upload UploadObject=new Upload();
   Language=UploadObject.languageName();
     LanguageField.setText(Language);
 
 
-}
 
+    /* this action listener will end the application when the button is clicked*/
+    EndButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.exit(0);
+        }
+    });
+
+}
 
 
 }
