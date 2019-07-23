@@ -83,7 +83,7 @@ public class Upload  {
     {
         JFrame Frame= new JFrame("Upload");
         Frame.setContentPane(new Upload().MainPanel);
-        Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Frame.pack();
         Frame.setVisible(true);
     }

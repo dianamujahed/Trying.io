@@ -16,7 +16,8 @@ public static void main(String [] args)
     //this code is for showing the main menu form
     JFrame MainMenu = new JFrame("MainMenu");
     MainMenu.setContentPane(new MainMenu().MainPanel);
-    MainMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    MainMenu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
     MainMenu.pack();
     MainMenu.setVisible(true);
 
