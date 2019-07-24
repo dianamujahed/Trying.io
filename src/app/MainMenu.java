@@ -14,12 +14,12 @@ public class MainMenu  {
 public static void main(String [] args)
 {
     //this code is for showing the main menu form
-    JFrame MainMenu = new JFrame("MainMenu");
-    MainMenu.setContentPane(new MainMenu().MainPanel);
-    MainMenu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    MainMenu.pack();
-    MainMenu.setVisible(true);
-    MainMenu.setLocationRelativeTo(null);
+    JFrame Frame = new JFrame("MainMenu");
+    Frame.setContentPane(new MainMenu().MainPanel);
+    Frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    Frame.setSize(500, 500);
+    Frame.setVisible(true);
+    Frame.setLocationRelativeTo(null);
 
 }
 public MainMenu(){

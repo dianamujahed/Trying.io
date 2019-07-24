@@ -18,7 +18,7 @@ public class Result {
         Frame= new JFrame("result");
         Frame.setContentPane(new Result().ResultPanel);
         Frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        Frame.pack();
+        Frame.setSize(500, 500);
         Frame.setVisible(true);
         Frame.setLocationRelativeTo(null);
     }
