@@ -77,6 +77,7 @@ public class Upload  {
         Frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Frame.pack();
         Frame.setVisible(true);
+        Frame.setLocationRelativeTo(null);
     }
 
     //this method will return the name of language that we uploded  in the file.

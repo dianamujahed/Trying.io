@@ -17,9 +17,9 @@ public static void main(String [] args)
     JFrame MainMenu = new JFrame("MainMenu");
     MainMenu.setContentPane(new MainMenu().MainPanel);
     MainMenu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
     MainMenu.pack();
     MainMenu.setVisible(true);
+    MainMenu.setLocationRelativeTo(null);
 
 }
 public MainMenu(){

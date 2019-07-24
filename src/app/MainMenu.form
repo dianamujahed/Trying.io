@@ -5,6 +5,7 @@
       <xy x="24" y="38" width="336" height="382"/>
     </constraints>
     <properties>
+      <alignmentX value="0.5"/>
       <background color="-5963894"/>
     </properties>
     <border type="none"/>

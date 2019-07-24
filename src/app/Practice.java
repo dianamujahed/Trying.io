@@ -99,6 +99,7 @@ public class Practice   {
         Frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Frame.pack();
         Frame.setVisible(true);
+        Frame.setLocationRelativeTo(null);
         Counter counter=new Counter();
         counter.start();
     }
@@ -107,6 +108,7 @@ public class Practice   {
 
 public Practice()
 {
+
     // when end button is clicked , the practice frame will be closed
     EndButton.addActionListener(new ActionListener() {
         @Override
