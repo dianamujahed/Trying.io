@@ -6,23 +6,24 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
-
+//this class is for making a thread for timer
  class Counter extends Thread{
     public Counter(){}
-
     public void run(){
 		  /*
 			1000 milliseconds = 1 second
 			60 seconds = 1 minute
-			60  * 1000 * 5 = 60,000 milliseconds
+			60  * 1000  = 60,000 milliseconds
 			Reduce the thousands place, and you get 300 increments of 1000 milliseconds
 		  */
 		  Practice Time=new Practice();
         for(int i = 59; i >= 0; i -= 1){
-            if(i == 0) System.exit(0);
+            if(i == 0) { Result result =new Result();
+                result.showResultFrame();};
+
             try{Thread.sleep(1000);
                 System.out.println(i);
-                Time.getTimeField().setText(i+" sec");
+                Time.getTimeField().setText(i+" sec");//after each second until 60 sec, this code will execute
             }
             catch(InterruptedException e){}
         }
@@ -75,8 +76,8 @@ public class Practice   {
             return null;
         }
     }
+    //this method is for setting the original code of the language file  in the original code field
     public void setOriginalCode(){
-
         List<String> OriginalCode = new ArrayList<String>();
         OriginalCode=this.readFile("java.txt");
         for (int i = 0; i < OriginalCode.size(); i++) {
@@ -86,7 +87,6 @@ public class Practice   {
         OriginalCodeField.setText(OriginalCodeText);
 
     }
-
 
     /*this method  shows the pracice form*/
     public void showPracticeFrame()
@@ -98,25 +98,23 @@ public class Practice   {
         Frame.setVisible(true);
         Counter counter=new Counter();
         counter.start();
-
-
-
     }
 
 
 
 public Practice()
 {
+    // when end button is clicked , the practice frame will be closed
     EndButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             Frame.dispose();
-
         }
     });
 
 
 }
+//this method will return the TimeField variable 
 public JLabel getTimeField(){
     return TimeField;
 }

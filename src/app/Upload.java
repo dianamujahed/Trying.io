@@ -19,23 +19,20 @@ public class Upload  {
     private JPanel  CodeFieldPanel;
     private JTextArea CodeArea;
     private JLabel LanguageLabel;
-
     public String Language;
-
-    public static String l;
+    public static String LanguageName;
     public Upload()
-{
+   {
 
 
     // when save button is clicked, new file will be created and named same name as the LanguageField variable
-
    SaveButton.addActionListener(new ActionListener()
    {
         @Override
         public void actionPerformed(ActionEvent e) {
             Language = LanguageField.getText().toString();
 
-            l=Language;
+            LanguageName=Language;
              Language = Language+".txt";
              try {
                       //create new file  named(Language name)
@@ -45,13 +42,10 @@ public class Upload  {
                       BufferedWriter WriteBuffer = new BufferedWriter(writeFile);
                       WriteBuffer.write(CodeArea.getText().toString());
                       WriteBuffer.close();
-
-
                       /*If file gets created then the createNewFile()
                       * method would return true or if the file is
                       * already present it would return false
                      */
-
                     boolean CreateFile = file.createNewFile();
                      if (CreateFile)
                      {
@@ -67,9 +61,6 @@ public class Upload  {
                 System.out.println("Exception Occurred:");
                 Exception1.printStackTrace();
              }
-
-
-
         }
 
 
@@ -92,7 +83,7 @@ public class Upload  {
     public  String languageName()
     {
 
-        return  l;
+        return  LanguageName;
 
     }
 
