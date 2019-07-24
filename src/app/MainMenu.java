@@ -32,6 +32,7 @@ public MainMenu(){
            frame.showPracticeFrame();
         }
     });
+    /* this action listener will open the upload frame when the button is clicked*/
     UploadButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {

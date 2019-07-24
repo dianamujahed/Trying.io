@@ -111,10 +111,13 @@ public Practice()
             Frame.dispose();
         }
     });
-
+    //this method used to show the Language name in the practice form.
+    Upload UploadObject=new Upload();
+    Language=UploadObject.languageName();
+    LanguageField.setText(Language);
 
 }
-//this method will return the TimeField variable 
+//this method will return the TimeField variable
 public JLabel getTimeField(){
     return TimeField;
 }
