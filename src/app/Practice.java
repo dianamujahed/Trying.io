@@ -25,7 +25,10 @@ import java.util.List;
                 System.out.println(i);
                 Time.getTimeField().setText(i+" sec");//after each second until 60 sec, this code will execute
             }
-            catch(InterruptedException e){}
+            catch(InterruptedException e){
+
+                System.out.println(e.getStackTrace());
+            }
         }
 
     }
@@ -48,7 +51,7 @@ public class Practice   {
     private JLabel TimeField;
     private JLabel practiceLabel;
     private String Language;
-    private String OriginalCodeText="";
+    private static String OriginalCodeText="";
     private  static JFrame Frame;
     /**
      * Open and read a file, and return the lines in the file as a list
