@@ -4,9 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.io.*;
 
 //this class is for making a thread for timer
  class Counter extends Thread{
@@ -125,16 +126,26 @@ public Practice()
 
     Upload upload=new Upload();
     String FileName= upload.languageName()+".txt";
-    List<String> OriginalCode = new ArrayList<String>();
-    OriginalCode=this.readFile(FileName);
-    for (int i = 0; i < OriginalCode.size(); i++) {
-        OriginalCodeText=(OriginalCode.get(i))+OriginalCodeText;
+//    List<String> OriginalCode = new ArrayList<String>();
+//    OriginalCode=this.readFile(FileName);
+//    for (int i = 0; i < OriginalCode.size(); i++) {
+//        OriginalCodeText=(OriginalCode.get(i))+OriginalCodeText;
+//    }
+//    System.out.println(OriginalCodeText);
+//    OriginalCodeField.setText(OriginalCodeText);
+
+
+    try {
+        FileReader fr=new FileReader(FileName);
+        BufferedReader br=new BufferedReader(fr);
+        String str;
+        while((str=br.readLine())!=null)
+        OriginalCodeField.append(str+"\n");
+
+    br.close();}
+    catch (IOException e){
+System.out.println("file not found");
     }
-    System.out.println(OriginalCodeText);
-    OriginalCodeField.setText(OriginalCodeText);
-
-
-
 
 }
 //this method will return the TimeField variable
@@ -143,5 +154,6 @@ public JLabel getTimeField(){
 }
 
 }
+
 
 

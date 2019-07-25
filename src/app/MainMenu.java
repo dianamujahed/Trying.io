@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.EventHandler;
+import java.io.*;
 /*this class for the main menu GUI form */
 public class MainMenu  {
     private JPanel MainPanel;
@@ -20,6 +21,7 @@ public static void main(String [] args)
     Frame.setSize(500, 500);
     Frame.setVisible(true);
     Frame.setLocationRelativeTo(null);
+
 
 }
 public MainMenu(){
