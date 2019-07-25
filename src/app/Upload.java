@@ -33,11 +33,12 @@ public class Upload  {
             Language = LanguageField.getText().toString();
 
             LanguageName=Language;
-             Language = Language+".txt";
+             Language =Language+".txt";
+
              try {
                       //create new file  named(Language name)
                       File file = new File(Language);
-                      //This code load the content of the CodeArea in the created file
+                         //This code load the content of the CodeArea in the created file
                       FileWriter writeFile = new FileWriter(file.getAbsoluteFile());
                       BufferedWriter WriteBuffer = new BufferedWriter(writeFile);
                       WriteBuffer.write(CodeArea.getText().toString());

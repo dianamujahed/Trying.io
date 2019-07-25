@@ -79,15 +79,18 @@ public class Practice   {
             return null;
         }
     }
+
     //this method is for setting the original code of the language file  in the original code field
     public void setOriginalCode(){
+        Upload upload=new Upload();
+        String FileName= upload.languageName()+".txt";
         List<String> OriginalCode = new ArrayList<String>();
-        OriginalCode=this.readFile("java.txt");
+        OriginalCode=this.readFile(FileName);
         for (int i = 0; i < OriginalCode.size(); i++) {
             OriginalCodeText=(OriginalCode.get(i))+OriginalCodeText;
         }
         System.out.println(OriginalCodeText);
-        OriginalCodeField.setText(OriginalCodeText);
+        OriginalCodeField.setText(OriginalCodeText.toString());
 
     }
 
