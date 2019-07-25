@@ -38,7 +38,6 @@ import java.util.List;
 public class Practice   {
     private JTextArea OriginalCodeField;
     private JButton EndButton;
-    private JTextField InputCodeField;
     private JPanel mainPanel;
     private JPanel practicePanel;
     private JPanel TimePanel;
@@ -50,6 +49,7 @@ public class Practice   {
     private JLabel TimeLabel;
     private JLabel TimeField;
     private JLabel practiceLabel;
+    private JTextArea UserInputArea;
     private String Language;
     private static String OriginalCodeText="";
     private  static JFrame Frame;
