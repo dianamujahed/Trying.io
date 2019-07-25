@@ -130,6 +130,7 @@ public Practice()
     for (int i = 0; i < OriginalCode.size(); i++) {
         OriginalCodeText=(OriginalCode.get(i))+OriginalCodeText;
     }
+    System.out.println(OriginalCodeText);
     OriginalCodeField.setText(OriginalCodeText);
 
 
