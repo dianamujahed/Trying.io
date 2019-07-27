@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
@@ -32,7 +33,8 @@ import java.io.*;
 
             try{Thread.sleep(1000);
                 System.out.println(i);
-                Time.getTimeField().setText(i+" sec");//after each second until 60 sec, this code will execute
+
+                Time.getTimeField().setText(" sec");//after each second until 60 sec, this code will execute
             }
             catch(InterruptedException e){
 
@@ -56,7 +58,7 @@ public class Practice   {
     private JLabel LanguageField;
     private JLabel LanguageLabel;
     private JLabel TimeLabel;
-    private JLabel TimeField;
+    private  JLabel TimeField;
     private JLabel practiceLabel;
     private JTextArea UserInputArea;
     private String Language;
@@ -93,61 +95,57 @@ public class Practice   {
     /*this method  shows the pracice form*/
     public void showPracticeFrame()
     {
+        Counter counter=new Counter();
+        counter.start();
          Frame= new JFrame("practice");
         Frame.setContentPane(new Practice().mainPanel);
         Frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Frame.setSize(500, 500);
         Frame.setVisible(true);
         Frame.setLocationRelativeTo(null);
-        Counter counter=new Counter();
-        counter.start();
+
     }
 
 
 
 public Practice()
 {
+    OriginalCodeField.setEditable(false);
 
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            new Practice().TimeField.setVisible(true);
+        }
+    });
     // when end button is clicked , the practice frame will be closed
     EndButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
+
             Frame.dispose();
         }
     });
-    //this method used to show the Language name in the practice form.
+
     Upload UploadObject=new Upload();
     Language=UploadObject.languageName();
-    LanguageField.setText(Language);
-
-
-
-    //this code is for setting the original code of the language file  in the original code field
-
-    Upload upload=new Upload();
-    String FileName= upload.languageName()+".txt";
-//    List<String> OriginalCode = new ArrayList<String>();
-//    OriginalCode=this.readFile(FileName);
-//    for (int i = 0; i < OriginalCode.size(); i++) {
-//        OriginalCodeText=(OriginalCode.get(i))+OriginalCodeText;
-//    }
-//    System.out.println(OriginalCodeText);
-//    OriginalCodeField.setText(OriginalCodeText);
-
+    if(Language==null)
+        Language="java";
+    LanguageField.setText(Language);//this method used to show the Language name in the practice form.
+    String FileName= Language+".txt";
 
     try {
         FileReader fr=new FileReader(FileName);
         BufferedReader br=new BufferedReader(fr);
         String str;
         while((str=br.readLine())!=null)
-        OriginalCodeField.append(str+"\n");
+        OriginalCodeField.append(str+"\n");//this code is for setting the original code of the language file  in the original code field
 
     br.close();}
     catch (IOException e){
 System.out.println("file not found");
     }
+    }
 
-}
 //this method will return the TimeField variable
 public JLabel getTimeField(){
     return TimeField;

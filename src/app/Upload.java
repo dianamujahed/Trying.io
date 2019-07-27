@@ -19,8 +19,9 @@ public class Upload  {
     private JPanel  CodeFieldPanel;
     private JTextArea CodeArea;
     private JLabel LanguageLabel;
-    public String Language;
+    private String Language;
     public static String LanguageName;
+    private  static JFrame Frame;
 
     public Upload()
    {
@@ -31,44 +32,51 @@ public class Upload  {
    {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Language = LanguageField.getText().toString();
+            Language = LanguageField.getText();
+            System.out.printf(Language);
+            if (!Language.equals("")) {
+                LanguageName = Language;
+                Language = Language + ".txt";
 
-            LanguageName=Language;
-             Language =Language+".txt";
+                try {
+                    //create new file  named(Language name)
+                    File file = new File(Language);
 
-             try {
-                      //create new file  named(Language name)
-                      File file = new File(Language);
+                    //This code load the content of the CodeArea in the created file
+                    FileWriter writeFile = new FileWriter(file.getAbsoluteFile());
+                    BufferedWriter WriteBuffer = new BufferedWriter(writeFile);
+                    WriteBuffer.write(CodeArea.getText().toString());
+                    WriteBuffer.close();
 
-                         //This code load the content of the CodeArea in the created file
-                      FileWriter writeFile = new FileWriter(file.getAbsoluteFile());
-                      BufferedWriter WriteBuffer = new BufferedWriter(writeFile);
-                      WriteBuffer.write(CodeArea.getText().toString());
-                      WriteBuffer.close();
-
-                      /*If file gets created then the createNewFile()
-                      * method would return true or if the file is
-                      * already present it would return false
+                    /*If file gets created then the createNewFile()
+                     * method would return true or if the file is
+                     * already present it would return false
                      */
                     boolean CreateFile = file.createNewFile();
-                     if (CreateFile)
-                     {
-                      System.out.println("File has been created successfully");
-                     }
+                    if (CreateFile) {
+                        System.out.println("File has been created successfully");
 
-                     else{
-                           System.out.println("File already present at the specified location");
-                         }
+                    } else {
+                        System.out.println("File already present at the specified location");
+                    }
+
+                } catch (IOException Exception1) {
+                    System.out.println("Exception Occurred:");
+                    Exception1.printStackTrace();
                 }
-             catch (IOException Exception1)
-             {
-                System.out.println("Exception Occurred:");
-                Exception1.printStackTrace();
-             }
+                Frame.dispose();
+
+            }else
+            {
+                JFrame frame = new JFrame("language field is required ");
+
+                // show a joptionpane dialog using showMessageDialog
+                JOptionPane.showMessageDialog(frame,
+                        "write the language name");
+
+            }
 
         }
-
-
    });
 
 
@@ -77,7 +85,7 @@ public class Upload  {
 //This method used to show t  the upload frame.
     public void showUploadFrame()
     {
-        JFrame Frame= new JFrame("Upload");
+         Frame= new JFrame("Upload");
         Frame.setContentPane(new Upload().MainPanel);
         Frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Frame.setSize(500, 500);
