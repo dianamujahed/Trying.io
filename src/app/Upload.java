@@ -25,7 +25,7 @@ public class Upload  {
 
     public Upload()
    {
-
+        CodeArea.setLineWrap(true);
 
     // when save button is clicked, new file will be created and named same name as the LanguageField variable
    SaveButton.addActionListener(new ActionListener()

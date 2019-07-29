@@ -110,7 +110,9 @@ public class Practice   {
 
 public Practice()
 {
+    OriginalCodeField.setLineWrap(true);
     OriginalCodeField.setEditable(false);
+    UserInputArea.setLineWrap(true);
 
     java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
