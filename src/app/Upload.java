@@ -32,11 +32,10 @@ public class Upload  {
    {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Language = LanguageField.getText();
-            System.out.printf(Language);
-            if (!Language.equals("")) {
-                LanguageName = Language;
-                Language = Language + ".txt";
+            LanguageName  = LanguageField.getText();
+            if (!LanguageName.equals("")&&!(CodeArea.getText().equals("")) ){
+
+                Language = LanguageName + ".txt";
 
                 try {
                     //create new file  named(Language name)
@@ -68,11 +67,11 @@ public class Upload  {
 
             }else
             {
-                JFrame frame = new JFrame("language field is required ");
+                JFrame frame = new JFrame("language name and code are required ");
 
                 // show a joptionpane dialog using showMessageDialog
                 JOptionPane.showMessageDialog(frame,
-                        "write the language name");
+                        "language name and code are required ");
 
             }
 
